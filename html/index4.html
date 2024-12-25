@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.min.css.map">
+    <link rel="stylesheet" href="../css/style4.css">
+    <title>book store</title>
+</head>
+<body>
+    <div class="container">
+        <header class="nav">
+            <label>E-book</label>
+            <nav>
+                <div class="anc">
+                <a href="./index1.html"><i class="fa-solid fa-house"></i>  Home</a>
+                <a href="./index3.html"><i class="fa-solid fa-book"></i>  category</a>
+                <a href="./index2.html"><i class="fa-regular fa-address-card"></i>Nearest Bookstore</a>
+                <a href="./index4.html"><i class="fa-solid fa-building-shield"></i>feedback</a>
+                <a href="./login.html"><i class="fa-solid fa-building-shield"></i> sign out</a>
+                </div>
+                <div class="active">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </nav>
+        </header>
+        <div class="policy">
+            <h2><b>feedback:</b></h2>
+            <p>
+                 we are committed to providing you with the best possible experience. Your thoughts and suggestions are incredibly important to us as they help us improve our services and offer better products. Please take a moment to share your feedback with us by filling out the form below. Whether you have questions, suggestions, or comments about our books, authors, or any aspect of our store, we would love to hear from you. Your feedback helps us serve you better!</p>
+                                                <div class="form">
+                                                    <form id="feedbackForm" action="https://formspree.io/f/mvgoewjo" method="POST">
+                                                        <label for="email">Email</label>
+                                                        <input type="email" id="email" name="email" placeholder="Enter your email" required />
+                                                        
+                                                        <label for="book-name">Book Name</label>
+                                                        <input type="text" id="book-name" name="book-name" placeholder="Enter book name" required />
+                                                        
+                                                        <label for="author-name">Author Name</label>
+                                                        <input type="text" id="author-name" name="author-name" placeholder="Enter author name" required />
+                                                        
+                                                        <label for="description">Type any Question</label>
+                                                        <input type="text" id="description" name="description" placeholder="Type your question" required />
+                                                        
+                                                        <button type="submit">Submit</button>
+                                                    </form>
+                                                    
+                                                    
+                                                    <!-- Success Message -->
+                                                    <div id="successMessage" style="display:none; color: green;">Thank you for your feedback!</div>
+                                                    
+                                                    <!-- Custom Error Message -->
+                                                    <div id="customErrorMessage" style="display:none; color:red;">There was an issue with your submission. Please try again.</div>
+                                                </div>
+                                                
+                                               
+                                                
+                                                
+                                                
+        </div>
+    </div>
+    <footer>
+        <div class="para">
+            <div class="contact">
+                <h4><i class="fa-solid fa-address-book"></i> contact us</h4>
+                <ul>
+                    <li><a href="#"><i class="fa-brands fa-whatsapp"></i> whats app</a></li>
+                    <li><a href="#"><i class="fa-brands fa-facebook"></i> facebook</a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i> instagram</a></li>
+                    <li><a href="#"><i class="fa-brands fa-telegram"></i> telegram</a></li>
+                </ul>
+            </div>
+            <div class="know">
+                <h4><i class="fa-solid fa-brain"></i> get to know us</h4>
+                <ul>
+                    <li><a href="#"><i class="fa-solid fa-cart-shopping"></i> How to buy</a></li>
+                    <li><a href="#"><i class="fa-solid fa-truck"></i> Track my orders</a></li>
+                    <li><a href="#"><i class="fa-solid fa-circle-question"></i> common questions</a></li>
+                    <li><a href="#"><i class="fa-solid fa-phone"></i> call us</a></li>
+                </ul>
+            </div>
+            <div class="links">
+                <h4><i class="fa-solid fa-link"></i> Important links</h4>
+                <ul>
+                    <li><a href="./index4.html"><i class="fa-solid fa-building-shield"></i> Privacy Policy</a></li>
+                    <li><a href="#"><i class="fa-solid fa-check"></i> Terms and Conditions</a></li>
+                    <li><a href="#"><i class="fa-solid fa-building-shield"></i> Return policy</a></li>
+                    <li><a href="#"><i class="fa-solid fa-truck-fast"></i> Shipping and delivery</a></li>
+                </ul>
+            </div>
+          
+        </div>
+    </footer>
+   
+ 
+    
+    <script src="../java/script.js"></script>
+    <script>
+        // Get the form element
+        const form = document.getElementById('feedbackForm');
+    
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();  // Prevent the default form submission (page reload)
+    
+            // Hide previous messages
+            document.getElementById('customErrorMessage').style.display = 'none';
+            document.getElementById('successMessage').style.display = 'none';
+    
+            const formData = new FormData(form);  // Create FormData from the form
+    
+            // Use fetch to send form data via POST without page reload
+            fetch(form.action, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Show success message
+                    document.getElementById('successMessage').style.display = 'block';
+                    form.reset();  // Optionally reset the form after successful submission
+                    setTimeout(() => {
+                        document.getElementById('successMessage').style.display = 'none';
+                    }, 3000);
+                } else {
+                    // Show a custom error message if the response is not OK
+                    document.getElementById('customErrorMessage').textContent = "Thank you for your submission!";
+                    document.getElementById('customErrorMessage').style.color = "green"; // Optional, to show success in green
+                    document.getElementById('customErrorMessage').style.display = 'block';
+                }
+            })
+            .catch(error => {
+                // Show custom error message in case of network or other issues
+                document.getElementById('customErrorMessage').textContent = "Thank you for your submission!";
+                document.getElementById('customErrorMessage').style.color = "green";  // Optional, to show error in red
+                document.getElementById('customErrorMessage').style.display = 'block';
+            });
+        });
+    </script>
+       <scrip src="https://kit.fontawesome.com/207c406191.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

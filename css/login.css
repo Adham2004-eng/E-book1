@@ -1,0 +1,165 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body */
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url(../imgs/books.jpg); /* Gold Gradient */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+    padding: 20px;
+    min-height: 100%;
+  }
+  
+  /* Container for the Form */
+  .container {
+    background: #fff;
+    padding: 40px 50px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    box-sizing: border-box;
+  }
+  
+  /* Form Header */
+  h2 {
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  /* Input Fields */
+  input {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f7f7f7;
+    transition: all 0.3s ease;
+  }
+  
+  /* Input focus effect */
+  input:focus {
+    border-color: #FFD700; /* Gold Border on Focus */
+    background-color: #fff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 215, 0, 0.3); /* Gold Glow Effect */
+  }
+  
+  /* Buttons */
+  button {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #FFD700; /* Gold button */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Button hover effect */
+  button:hover {
+    background-color: #DAA520; /* Darker Gold on Hover */
+  }
+  
+  /* Hyperlink for switching between Login/Sign-Up */
+  a {
+    color: #FFD700; /* Gold Link */
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Message Box Styles */
+  .message-box {
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    display: none;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .success {
+    background-color: #4CAF50; /* Green for success */
+    color: white;
+  }
+  
+  .error {
+    background-color: #f44336; /* Red for error */
+    color: white;
+  }
+  
+  /* Additional paragraph */
+  p {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  /* Hide the sign-up form when login form is active */
+  .hidden {
+    display: none;
+  }
+  
+  /* Responsive Design for Tablets and Small Screens */
+  @media screen and (max-width: 480px) {
+    .container {
+      padding: 20px 30px;
+      max-width: 90%;  /* More flexible on small screens */
+    }
+  
+    h2 {
+      font-size: 22px;
+    }
+  
+    input {
+      font-size: 14px;  /* Smaller text in inputs */
+    }
+  
+    button {
+      font-size: 16px;
+      padding: 12px;
+    }
+  
+    .message-box {
+      font-size: 12px;
+      padding: 8px;
+    }
+  
+    p {
+      font-size: 12px;
+    }
+  }
+  
+  /* For larger screens (tablets and desktops) */
+  @media screen and (min-width: 481px) and (max-width: 1024px) {
+    .container {
+      padding: 30px 40px;
+    }
+  
+    h2 {
+      font-size: 24px;
+    }
+  
+    button {
+      font-size: 18px;
+    }
+  }
+  
